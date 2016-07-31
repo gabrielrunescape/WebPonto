@@ -13,20 +13,28 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  username: gabriel
+  password: gabriel435
   host: localhost
 
 development:
   <<: *default
-  database: webponto_development
+  adapter: mysql2
+  database: webponto_desenv
+  username: gabriel
+  password: gabriel435
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: webponto_test
+  adapter: mysql2
+  database: webponto_teste
+  username: gabriel
+  password: gabriel435
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +57,8 @@ test:
 #
 production:
   <<: *default
-  database: webponto_production
-  username: webponto
-  password: <%= ENV['WEBPONTO_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  database: webponto
+  username: gabriel
+  password: gabriel435
+  host: localhost
