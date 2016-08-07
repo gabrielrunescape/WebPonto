@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usuarios
   resources :registros
   get 'pages/home'
   #root 'pages/home'
