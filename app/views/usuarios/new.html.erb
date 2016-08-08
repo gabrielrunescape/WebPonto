@@ -1,0 +1,9 @@
+<% provide(:title, "WebPonto - Criar novo usuário") %>
+
+<div class="container">
+  <h1 class="form-signin-heading">Novo usuário</h1>
+
+  <%= render 'form', usuario: @usuario %>
+
+  <%= link_to 'Voltar', @usuario, class: "btn btn-lg btn-info" %>
+</div> <!-- /container -->
