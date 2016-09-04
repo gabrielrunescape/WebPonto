@@ -10,12 +10,12 @@ var Usuario = require('../models/usuario');
 
 // Obtem página de registro
 router.get('/register', function(req, res){
-	res.render('register', { title: 'WebPonto - Registro' });
+	res.render('home/register', { title: 'WebPonto - Registro' });
 });
 
 // Obtem página de autenticação
 router.get('/login', function(req, res){
-	res.render('login', { title: 'WebPonto - Autenticação' });
+	res.render('home/login', { title: 'WebPonto - Autenticação' });
 });
 
 router.get('/logout', function(req, res){
@@ -54,8 +54,9 @@ router.post('/register', function(req, res) {
 	var errors = req.validationErrors();
 
 	if(errors){
-		res.render('register',{
-			errors:errors
+		res.render('home/register',{
+			errors: errors,
+			title: 'WebPonto - Registro'
 		});
 	} else {
 		var usuario = new Usuario(null, nome, email, login, sexo, senha);
@@ -83,50 +84,17 @@ router.post('/register', function(req, res) {
 
 // Recebe informações da página de login
 router.post('/login', passport.authenticate('login', {successRedirect:'/users/dashboard', failureRedirect:'/users/login',failureFlash: true}));
-	/*var login = req.body.login;
-	var senha = req.body.senha;
-
-	Usuario.getUserByLogin(login, function(err, usuario) {
-		if (err) {
-			console.log(err);
-			return res.status(500).send();
-		}
-
-		if (!usuario || usuario === []) {
-			req.status(404).send();
-			return done(null, false, {message: 'Usuário desconhecido'});
-		}
-
-		Usuario.compararSenha(senha, usuario.senha, function(err, isMatch) {
-			if (err) {
-				console.log(err);
-				return res.status(500).send();
-			};
-
-			if (isMatch) {
-				req.session.usuario = login;
-
-				return res.status(200).send();
-			} else {
-				return done(null, false, {message: 'Senha inválida'});
-			}
-		});
-
-
-	});
-		//req.session;
-		//req.end();
-		//res.redirect('/users/dashboard');
-		res.redirect('/users/dashboard');
-});*/
 
 passport.use('login', new LocalStrategy({ usernameField: 'login', passwordField: 'senha', passReqToCallback : true }, function(req, login, senha, done) {
 	mysql.query("SELECT * FROM Usuario WHERE Login = ?", login, function(err, linha) {
-		if (err) throw err;
+		if (err) {
+			console.log(err);
+			return done(null, false, {message: err});
+		}
 
 		var usuario = linha[0];
 
-		if (!usuario || usuario === []) {
+		if (!usuario || usuario === 'undefined') {
 			return done(null, false, {message: 'Usuário desconhecido'});
 		}
 
@@ -141,28 +109,8 @@ passport.use('login', new LocalStrategy({ usernameField: 'login', passwordField:
 				done(null, false, {message: 'Senha inválida'});
 			}
 		});
-
-		/*Usuario.compararSenha(senha, usuario.Senha, function(err, isMatch) {
-			if (err) throw err;
-
-			if (isMatch) {
-
-			} else {
-
-			}
-		})*/
 	});
-		/**/
-
-
-		/*;
-
-		linhas.forEach(function(row) {
-            resultados.push(row);
-        });*/
-	})
-);
-//}));
+}));
 
 passport.serializeUser(function(usuario, done) {
   done(null, usuario.ID);

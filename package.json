@@ -23,7 +23,7 @@
     "connect-flash": "*",
     "cookie-parser": "*",
     "express": "*",
-    "express-handlebars": "*",
+    "ejs": "*",
     "express-messages": "*",
     "express-myconnection": "*",
     "express-session": "*",

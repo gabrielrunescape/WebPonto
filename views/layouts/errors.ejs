@@ -1,0 +1,23 @@
+<% if  (locals.success_msg) { %>
+    <% success_msg.forEach(function(erro) { %>
+        <div class="alert alert-success"><%= success_msg %></div>
+    <% }); %>
+<% } %>
+
+<% if  (locals.error_msg) { %>
+    <% error_msg.forEach(function(erro) { %>
+        <div class="alert alert-danger"><%= error_msg %></div>
+    <% }); %>
+<% } %>
+
+<% if  (locals.error) { %>
+    <% error.forEach(function(erro) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% }); %>
+<% } %>
+
+<% if (locals.errors) { %>
+    <% errors.forEach(function(erro) { %>
+        <div class="alert alert-danger"><%= erro.msg %></div>
+    <% }); %>
+<% } %>
