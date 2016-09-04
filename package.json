@@ -1,0 +1,37 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Aplicação para controle de ponto",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrunescape/WebPonto.git"
+  },
+  "author": "Gabriel Filipe <gabrielfilipe@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielrunescape/WebPonto/issues"
+  },
+  "homepage": "https://github.com/gabrielrunescape/WebPonto#readme",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "bootstrap": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-myconnection": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mysql": "*",
+    "nodemon": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
+  }
+}
