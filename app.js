@@ -10,9 +10,10 @@ var LocalStrategy    = require('passport-local').Strategy;
 var path             = require('path');
 
 // Inicia aplicação e define rotas
-var app = express();
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var app       = express();
+var routes    = require('./routes/index');
+var users     = require('./routes/users');
+var dashboard = require('./routes/dashboard');
 
 // View Engine
 app.set('view engine', 'ejs');
@@ -72,6 +73,7 @@ app.use(function (req, res, next) {
 // Rotas
 app.use('/', routes);
 app.use('/users', users);
+app.use('/dashboard', dashboard);
 
 // Porta da aplicação
 app.set('port', (process.env.PORT || 3000));

@@ -27,14 +27,6 @@ router.get('/logout', function(req, res){
 	res.redirect('/users/login');
 });
 
-router.get('/dashboard', function(req, res) {
-	if (!req.session.usuario) {
-		return res.redirect(401, '/users/login');
-	}
-
-	return res.status(200).send('Bem vindo usuário!');
-})
-
 // Recebe informações da página de registro
 router.post('/register', function(req, res) {
 	var nome = req.body.nome;
@@ -83,7 +75,7 @@ router.post('/register', function(req, res) {
 });
 
 // Recebe informações da página de login
-router.post('/login', passport.authenticate('login', {successRedirect:'/users/dashboard', failureRedirect:'/users/login',failureFlash: true}));
+router.post('/login', passport.authenticate('login', {successRedirect:'/dashboard/', failureRedirect:'/users/login',failureFlash: true}));
 
 passport.use('login', new LocalStrategy({ usernameField: 'login', passwordField: 'senha', passReqToCallback : true }, function(req, login, senha, done) {
 	mysql.query("SELECT * FROM Usuario WHERE Login = ?", login, function(err, linha) {
