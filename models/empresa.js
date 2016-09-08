@@ -24,3 +24,25 @@ module.exports = function Empresa() {
     this.Fax = null;
     this.Usuario = null;
 }
+
+module.exports.getUserById = function(id, callback){
+	var resultados = [];
+
+	mysql.query("SELECT * FROM Empresa WHERE ID = ?", id, function(err, linhas) {
+		if (err) throw err;
+
+		linhas.forEach(function(row) {
+			if (linhas.CEP) {
+				mysql.query("SELECT * FROM CEP WHERE ID = ?", linhas.CEP, function(err, linhas) {
+					resultados.CEP.forEach(function(linha) {
+						resultados.CEP.push(linha);
+					});
+				});
+			} else {
+            	resultados.push(row);
+			}
+        });
+	});
+
+	return resultados;
+}
