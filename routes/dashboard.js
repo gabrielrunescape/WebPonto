@@ -20,11 +20,15 @@ router.get('/', function(req, res) {
 				empresa = JSON.stringify(empresa);
 				empresa = JSON.parse(empresa);
 
-				console.log(empresa);
+				console.log(req.session.usuario);
 				res.render('dashboard/index', { title: 'WebPonto - ' + req.session.usuario, usuario: req.session.usuario });
 			});
 		});
 	}
-})
+});
+
+router.get('/empresa', function(req, res) {
+	res.render('dashboard/empresa', { title: 'WebPonto - Empresa', usuario: req.session.usuario });
+});
 
 module.exports = router;

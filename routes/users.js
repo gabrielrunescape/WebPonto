@@ -94,7 +94,7 @@ passport.use('login', new LocalStrategy({ usernameField: 'login', passwordField:
 	    	if (err) return done(null, false, {message: err});
 
 			if (isMatch) {
-				req.session.usuario = linha[0].Login;
+				req.session.usuario = linha[0];
 
 				return done(null, usuario);
 			} else {
