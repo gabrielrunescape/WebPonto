@@ -26,63 +26,63 @@
                                     </div>
 
                                     <div class="panel-body">
-                                        <form method="post" action="/users/register"><br/>
+                                        <form method="post" action="/dashboard/empresa"><br/>
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-                                                <input type="text" class="form-control" placeholder="Razão social" name="nome" />
+                                                <input type="text" class="form-control" placeholder="Razão social" name="razao" />
                                             </div>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-                                                <input type="text" class="form-control" placeholder="Nome fantasia" name="nome" />
+                                                <input type="text" class="form-control" placeholder="Nome fantasia" name="fantasia" />
                                             </div>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                <input type="text" class="form-control" placeholder="Responsável" name="nome" />
+                                                <input type="text" class="form-control" placeholder="Responsável" name="responsavel" />
                                             </div>
 
                                             <hr/>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                                <input type="text" class="form-control" placeholder="CNPJ" name="login" />
+                                                <input type="text" class="form-control" placeholder="CNPJ (somente números)" name="CNPJ" />
                                             </div>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                                <input type="text" class="form-control" placeholder="Inscrição Estadual" name="login" />
+                                                <input type="text" class="form-control" placeholder="Inscrição Estadual (somente números)" name="IE" />
                                             </div>
 
                                             <hr/>
 
                                             <div class="form-group form-inline input-group">
                                                 <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
-                                                <input type="text" class="form-control" placeholder="CEP" name="cep" />
+                                                <input type="text" class="form-control" readonly placeholder="CEP" name="CEP" />
 
                                                 <a href="#cep" class="input-group-addon btn-success">Buscar CEP</a>
                                             </div>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                                <input type="password" class="form-control" placeholder="Número" name="senha" />
+                                                <input type="tel" class="form-control" placeholder="Número" name="numero" />
                                             </div>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-institution"></i></span>
-                                                <input type="password" class="form-control" placeholder="Complemento" name="senha" />
+                                                <input type="text" class="form-control" placeholder="Complemento" name="complemento" />
                                             </div>
 
                                             <hr/>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                <input type="password" class="form-control" placeholder="Telefone" name="senha" />
+                                                <input type="tel" class="form-control" placeholder="Telefone" name="telefone" />
                                             </div>
 
                                             <div class="form-group input-group">
                                                 <span class="input-group-addon"><i class="fa fa-fax"></i></span>
-                                                <input type="password" class="form-control" placeholder="Fax" name="confirmacao" />
+                                                <input type="tel" class="form-control" placeholder="Fax" name="fax" />
                                             </div>
 
                                             <button class="btn btn-success" type="submit">Finalizar cadastro</button>

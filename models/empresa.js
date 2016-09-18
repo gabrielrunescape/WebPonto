@@ -8,7 +8,9 @@ module.exports = function Empresa() {
 	this.CNPJ = null;
 	this.IE = null;
 
-    this.CEP = {
+	this.CEP = null;
+
+	/*this.CEP = {
         ID: null,
         CEP: null,
         Logradouro: null,
@@ -16,7 +18,7 @@ module.exports = function Empresa() {
         Localidade: null,
         UF: null,
         IBGE: null
-    };
+    };*/
 
     this.Numero = null;
     this.Complemento = null;

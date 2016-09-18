@@ -6,7 +6,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 // Instanciação das variáveis
 var router = express.Router();
-var Usuario = require('../models/usuario');
+var Empresa = require('../models/empresa');
 
 // Obtem página de registro
 router.get('/register', function(req, res){
@@ -51,7 +51,7 @@ router.post('/register', function(req, res) {
 			title: 'WebPonto - Registro'
 		});
 	} else {
-		var usuario = new Usuario(null, nome, email, login, sexo, senha);
+		/*var usuario = new Usuario(null, nome, email, login, sexo, senha);
 
 		bcrypt.genSalt(10, function(err, salt) {
 			bcrypt.hash(usuario.Senha, salt, function(err, hash) {
@@ -70,7 +70,7 @@ router.post('/register', function(req, res) {
 
 				res.redirect('/users/login');
 			});
-		});
+		});*/
 	}
 });
 

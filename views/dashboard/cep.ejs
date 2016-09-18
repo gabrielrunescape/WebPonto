@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include ../layouts/head %>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container">
+                        <div class="row text-center pad-top ">
+                            <div class="col-md-12">
+                                <h2>Página de cadastro do WebPonto</h2>
+                            </div>
+                        </div>
+
+                        <div class="row pad-top">
+                            <div class="col-md-6 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <strong> Inserir empresa </strong>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <form method="post" action="/dashboard/empresa"><br/>
+                                            <div class="form-group input-group">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Filtrar por:
+                                                        <span class="caret"></span>
+                                                    </button>
+
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="menuitem" href="#">CEP</a></li>
+                                                        <li><a class="menuitem" href="#">Logradouro</a></li>
+                                                        <li><a class="menuitem" href="#">Cidade</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                            </div>
+
+                                            <div class="form-group input-group">
+                                                <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+                                                <input type="text" class="form-control" placeholder="Nome fantasia" name="fantasia" />
+                                            </div>
+
+                                            <button class="btn btn-success" type="submit">Finalizar cadastro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include ../layouts/footer %>
+        </div>
+    </body>
+</html>
